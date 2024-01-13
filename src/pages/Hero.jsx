@@ -67,7 +67,7 @@ const Hero = () => {
     return (
         <>
             <div id='hero' className={`bg-slate-950 dark:bg-black h-screen relative z-30`}>
-                <header className={`${scrollNav ? 'bg-slate-900, dark:bg-slate-950' : 'bg-slate-950, dark:bg-black'} fixed inset-x-0 top-0 z-50`}>
+                <header className={`${scrollNav ? 'bg-slate-900 dark:bg-slate-950' : 'bg-slate-950, dark:bg-black'} fixed inset-x-0 top-0 z-50`}>
                     <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                         <div className="flex lg:flex-1" >
                             <Link to="hero"
