@@ -65,7 +65,7 @@ const contact = () => {
     };
 
     return (
-        <div id='contact' className='w-screen lg:h-screen h-fit flex flex-col items-center lg:py-0 py-20  bg-slate-950 dark:bg-black z-[5] sticky mb-[5rem]'>
+        <div id='contact' className='w-screen lg:h-screen h-fit flex flex-col items-center lg:py-0 py-20  bg-slate-950 dark:bg-black z-[5] sticky'>
             <div className='lg:flex lg:flex-row flex flex-col lg:justify-center items-center lg:my-20 lg:gap-10 gap-7'>
                 <div className='text-white lg:w-[30rem]  rounded-2xl flex flex-col justify-center items-center'>
                     <h2 data-aos="fade-right" className='font-glacial lg:text-6xl text-4xl lg:m-0 m-5'>Let's <span style={{ color: 'rgb(2 6 23)', textShadow: '-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff' }}
