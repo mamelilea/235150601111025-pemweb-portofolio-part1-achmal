@@ -35,7 +35,7 @@ export default function CarouselLogo() {
     return (
         <>
             {/*<!-- Component: Testimonial carousel --> */}
-            <div className="glide-09 relative w-full lg:h-56 bg-slate-950 z-[5] flex flex-col justify-center lg:py-40 py-20">
+            <div className="glide-09 relative w-full lg:h-56 bg-slate-950 dark:bg-black z-[5] flex flex-col justify-center lg:py-40 py-20">
                 <h1 data-aos="fade-down" id="skill" className="text-white lg:text-4xl text-2xl font-unigeo text-center lg:py-5">My Skills</h1>
                 {/* <!-- Slides --> */}
                 <div data-aos="fade-left" data-glide-el="track" className="lg:p-10 py-10 w-[50%]">

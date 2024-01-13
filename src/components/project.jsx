@@ -124,7 +124,7 @@ const project = () => {
     })
     return (
         <>
-            <div className='project w-screen bg-slate-950 px-12 py-10 z-[5] relative'>
+            <div className='project w-screen bg-slate-950 dark:bg-black px-12 py-10 z-[5] relative'>
                 <h1 data-aos="fade-down" id="project" className="text-white lg:text-4xl text-2xl font-unigeo text-center lg:py-10">My Projects</h1>
                 {/* card project */}
                 <section className="max-w-full" aria-multiselectable="false">

@@ -3,7 +3,7 @@ import React from 'react'
 const about = () => {
 
     return (
-        <div id="about" className='bg-slate-950 w-screen h-[80vh] py-10 z-20 relative'>
+        <div id="about" className='bg-slate-950 dark:bg-black w-screen h-[80vh] py-10 z-20 relative'>
             <div className='flex flex-col justify-center items-center  w-screen h-[80%]'>
                 <h1 data-aos="fade-down" className="text-white lg:text-4xl text-2xl font-unigeo text-center m-10">About Me</h1>
                 <div data-aos="fade-right" className='w-[70%]'>

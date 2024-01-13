@@ -41,10 +41,33 @@ const Hero = () => {
     // progress scroll on top
     const completion = readProgress();
 
+    // dark mode
+    const [theme, setTheme] = useState(null);
+
+    useEffect(() => {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setTheme("dark");
+        } else {
+            setTheme("light");
+        }
+    }, [])
+
+    useEffect(() => {
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    }, [theme]);
+
+    const handleThemeSwitch = () => {
+        setTheme(theme === 'dark' ? "light" : "dark");
+    };
+
     return (
         <>
-            <div id='hero' className={`bg-slate-950 h-screen relative z-30`}>
-                <header className={`${scrollNav ? 'bg-slate-900' : 'bg-slate-950'} fixed inset-x-0 top-0 z-50`}>
+            <div id='hero' className={`bg-slate-950 dark:bg-black h-screen relative z-30`}>
+                <header className={`${scrollNav ? 'bg-slate-900, dark:bg-slate-950' : 'bg-slate-950, dark:bg-black'} fixed inset-x-0 top-0 z-50`}>
                     <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                         <div className="flex lg:flex-1" >
                             <Link to="hero"
@@ -56,7 +79,15 @@ const Hero = () => {
                                 <span className='cursor-pointer font-origin lg:text-[2.5rem] text-2xl text-cyan-100'>ACHMAL</span>
                             </Link>
                         </div>
-                        <div className="flex lg:hidden">
+                        <div className="flex lg:hidden gap-2">
+                            <div className=" lg:hidden lg:flex-1 lg:justify-end">
+                                <label class="ui-switch" >
+                                    <input type="checkbox" name="" id="" />
+                                    <div class="slider">
+                                        <div class="circleButton" onClick={handleThemeSwitch}></div>
+                                    </div>
+                                </label>
+                            </div>
                             <button
                                 type="button"
                                 className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
@@ -65,6 +96,7 @@ const Hero = () => {
                                 <span className="sr-only">Open main menu</span>
                                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                             </button>
+
                         </div>
                         <div className="hidden lg:flex lg:gap-x-12">
                             {navigation.map((item) => (
@@ -81,9 +113,12 @@ const Hero = () => {
                             ))}
                         </div>
                         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                            <a href="#" className="text-sm font-semibold leading-6 text-slate-200">
-                                Log in <span aria-hidden="true">&rarr;</span>
-                            </a>
+                            <label class="ui-switch" >
+                                <input type="checkbox" name="" id="" />
+                                <div class="slider">
+                                    <div class="circleButton" onClick={handleThemeSwitch}></div>
+                                </div>
+                            </label>
                         </div>
                     </nav>
                     <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -127,14 +162,7 @@ const Hero = () => {
                                             </Link>
                                         ))}
                                     </div>
-                                    <div className="py-6">
-                                        <a
-                                            href="#"
-                                            className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                        >
-                                            Log in
-                                        </a>
-                                    </div>
+
                                 </div>
                             </div>
                         </Dialog.Panel>
