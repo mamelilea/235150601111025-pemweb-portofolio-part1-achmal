@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react"
+import React from "react"
 import '../index.css'
 import gameCorner from '../assets/project/game-corner.png'
 import gameIcon from '../assets/project/gameIcon.png'
@@ -16,6 +16,12 @@ import dicoding from '../assets/project/dicoding.png'
 import dicodingIcon from '../assets/project/dicodingIcon.png'
 import newYear from '../assets/project/2024.png'
 import newYearIcon from '../assets/project/2024Icon.png'
+// MUI tabs
+import PropTypes from 'prop-types';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 
 const ProjectCard = ({ icon, frontText, imgContent, titleDesc, tech, link }) => {
@@ -63,146 +69,65 @@ const ProjectCard = ({ icon, frontText, imgContent, titleDesc, tech, link }) => 
     );
 };
 
+// tabs MUI
+function CustomTabPanel(props) {
+    const { children, value, index, ...other } = props;
 
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box sx={{ p: 3 }}>
+                    <Typography>{children}</Typography>
+                </Box>
+            )}
+        </div>
+    );
+}
 
+CustomTabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
+};
 
+function a11yProps(index) {
+    return {
+        id: `simple-tab-${index}`,
+        'aria-controls': `simple-tabpanel-${index}`,
+    };
+}
 
 const project = () => {
-    // nyoba tabs
 
-    const [tabSelected, setTabSelected] = useState({
-        currentTab: 1,
-        noTabs: 3,
-    })
+    // tabs MUI
+    const [value, setValue] = React.useState(0);
 
-    const wrapperRef = useRef(null)
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
 
-    const handleKeyDown = e => {
-        if (e.keyCode === 39) {
-            if (wrapperRef.current && wrapperRef.current.contains(e.target)) {
-                if (
-                    tabSelected.currentTab >= 1 &&
-                    tabSelected.currentTab < tabSelected.noTabs
-                ) {
-                    setTabSelected({
-                        ...tabSelected,
-                        currentTab: tabSelected.currentTab + 1,
-                    })
-                } else {
-                    setTabSelected({
-                        ...tabSelected,
-                        currentTab: 1,
-                    })
-                }
-            }
-        }
 
-        if (e.keyCode === 37) {
-            if (wrapperRef.current && wrapperRef.current.contains(e.target)) {
-                if (
-                    tabSelected.currentTab > 1 &&
-                    tabSelected.currentTab <= tabSelected.noTabs
-                ) {
-                    setTabSelected({
-                        ...tabSelected,
-                        currentTab: tabSelected.currentTab - 1,
-                    })
-                } else {
-                    setTabSelected({
-                        ...tabSelected,
-                        currentTab: tabSelected.noTabs,
-                    })
-                }
-            }
-        }
-    }
-    useEffect(() => {
-        window.addEventListener("keydown", handleKeyDown)
-        return () => {
-            window.removeEventListener("keydown", handleKeyDown)
-        }
-    })
     return (
         <>
             <div className='project w-screen bg-slate-950 dark:bg-black px-12 py-10 z-[5] relative'>
                 <h1 data-aos="fade-down" id="project" className="text-white lg:text-4xl text-2xl font-unigeo text-center lg:py-10">My Projects</h1>
                 {/* card project */}
-                <section className="max-w-full" aria-multiselectable="false">
-                    <ul
-                        data-aos="fade-up-left"
-                        className="flex items-center justify-center border-b border-slate-950"
-                        role="tablist"
-                        ref={wrapperRef}
-                    >
-                        <li className="" role="presentation">
-                            <button
-                                className={`-mb-px inline-flex h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-t border-b-2 px-6 text-sm font-medium tracking-wide transition duration-300 hover:bg-cyan-50 hover:text-cyan-500 focus:bg-cyan-50 focus-visible:outline-none disabled:cursor-not-allowed ${tabSelected.currentTab === 1
-                                    ? "border-cyan-500 stroke-cyan-500 text-cyan-500 hover:border-cyan-600  hover:text-cyan-600 focus:border-cyan-700 focus:stroke-cyan-700 focus:text-cyan-700 disabled:border-slate-500"
-                                    : "justify-self-center border-transparent stroke-slate-700 text-slate-700 hover:border-cyan-500 hover:text-cyan-500 focus:border-cyan-600 focus:stroke-cyan-600 focus:text-cyan-600 disabled:text-slate-500"
-                                    }`}
-                                id="tab-label-1a"
-                                role="tab"
-                                aria-setsize="3"
-                                aria-posinset="1"
-                                tabindex={`${tabSelected.currentTab === 1 ? "0" : "-1"}`}
-                                aria-controls="tab-panel-1a"
-                                aria-selected={`${tabSelected.currentTab === 1 ? "true" : "false"
-                                    }`}
-                                onClick={() => setTabSelected({ ...tabSelected, currentTab: 1 })}
-                            >
-                                <span>All</span>
-                            </button>
-                        </li>
-                        <li className="" role="presentation">
-                            <button
-                                className={`-mb-px inline-flex h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-t border-b-2 px-6 text-sm font-medium tracking-wide transition duration-300 hover:bg-cyan-50 hover:stroke-cyan-600 focus:bg-cyan-50 focus-visible:outline-none disabled:cursor-not-allowed ${tabSelected.currentTab === 2
-                                    ? "border-cyan-500 stroke-cyan-500 text-cyan-500 hover:border-cyan-600  hover:text-cyan-600 focus:border-cyan-700 focus:stroke-cyan-700 focus:text-cyan-700 disabled:border-slate-500"
-                                    : "justify-self-center border-transparent stroke-slate-700 text-slate-700 hover:border-cyan-500 hover:text-cyan-500 focus:border-cyan-600 focus:stroke-cyan-600 focus:text-cyan-600 disabled:text-slate-500"
-                                    }`}
-                                id="tab-label-2a"
-                                role="tab"
-                                aria-setsize="3"
-                                aria-posinset="2"
-                                tabindex={`${tabSelected.currentTab === 2 ? "0" : "-1"}`}
-                                aria-controls="tab-panel-2a"
-                                aria-selected={`${tabSelected.currentTab === 2 ? "true" : "false"
-                                    }`}
-                                onClick={() => setTabSelected({ ...tabSelected, currentTab: 2 })}
-                            >
-                                <span>Portfolio</span>
-                            </button>
-                        </li>
-                        <li className="" role="presentation">
-                            <button
-                                className={`-mb-px inline-flex h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-t border-b-2 px-6 text-sm font-medium tracking-wide transition duration-300 hover:bg-cyan-50 hover:stroke-cyan-600 focus:bg-cyan-50 focus-visible:outline-none disabled:cursor-not-allowed ${tabSelected.currentTab === 3
-                                    ? "border-cyan-500 stroke-cyan-500 text-cyan-500 hover:border-cyan-600  hover:text-cyan-600 focus:border-cyan-700 focus:stroke-cyan-700 focus:text-cyan-700 disabled:border-slate-500"
-                                    : "justify-self-center border-transparent stroke-slate-700 text-slate-700 hover:border-cyan-500 hover:text-cyan-500 focus:border-cyan-600 focus:stroke-cyan-600 focus:text-cyan-600 disabled:text-slate-500"
-                                    }`}
-                                id="tab-label-3a"
-                                role="tab"
-                                aria-setsize="3"
-                                aria-posinset="2"
-                                tabindex={`${tabSelected.currentTab === 3 ? "0" : "-1"}`}
-                                aria-controls="tab-panel-2a"
-                                aria-selected={`${tabSelected.currentTab === 3 ? "true" : "false"
-                                    }`}
-                                onClick={() => setTabSelected({ ...tabSelected, currentTab: 3 })}
-                            >
-                                <span>Other</span>
-                            </button>
-                        </li>
-                    </ul>
-                    <div className="">
-                        <div
-                            className={`px-6 py-4 ${tabSelected.currentTab === 1 ? "" : "hidden"
-                                }`}
-                            id="tab-panel-1a"
-                            aria-hidden={`${tabSelected.currentTab === 1 ? "true" : "false"}`}
-                            role="tabpanel"
-                            aria-labelledby="tab-label-1a"
-                            tabindex="-1"
-                        >
-                            <div className='lg:grid lg:grid-cols-3 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
+                <Box sx={{ width: '100%' }}>
+                    <Box sx={{ borderBottom: 1, borderColor: 'divider' }} style={{ display: 'flex', justifyContent: 'center',alignItems: 'center'}}>
+                        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+                            <Tab label="All" {...a11yProps(0)} style={{ color: 'white' }}/>
+                            <Tab label="Portfolio" {...a11yProps(1)} style={{ color: 'white' }}/>
+                            <Tab label="Other" {...a11yProps(2)} style={{ color: 'white' }}/>
+                        </Tabs>
+                    </Box>
+                    <CustomTabPanel value={value} index={0}>
+                    <div className='lg:grid lg:grid-cols-3 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
                                 <ProjectCard
                                     icon={gameIcon}
                                     frontText="Game Corner"
@@ -269,17 +194,9 @@ const project = () => {
                                     link="https://s.id/happy-2k24"
                                 />
                             </div>
-                        </div>
-                        <div
-                            className={`px-6 py-4 ${tabSelected.currentTab === 2 ? "" : "hidden"
-                                }`}
-                            id="tab-panel-2a"
-                            aria-hidden={`${tabSelected.currentTab === 2 ? "true" : "false"}`}
-                            role="tabpanel"
-                            aria-labelledby="tab-label-2a"
-                            tabindex="-1"
-                        >
-                            <div className='lg:grid lg:grid-cols-3 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
+                    </CustomTabPanel>
+                    <CustomTabPanel value={value} index={1}>
+                    <div className='lg:grid lg:grid-cols-3 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
                                 <ProjectCard
                                     icon={webIcon}
                                     frontText="Achmal Web"
@@ -322,17 +239,9 @@ const project = () => {
                                     link="https://mamelilea.github.io/website-dicoding/"
                                 />
                             </div>
-                        </div>
-                        <div
-                            className={`px-6 py-4 ${tabSelected.currentTab === 3 ? "" : "hidden"
-                                }`}
-                            id="tab-panel-3a"
-                            aria-hidden={`${tabSelected.currentTab === 3 ? "true" : "false"}`}
-                            role="tabpanel"
-                            aria-labelledby="tab-label-3a"
-                            tabindex="-1"
-                        >
-                            <div className='lg:grid lg:grid-cols-3 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
+                    </CustomTabPanel>
+                    <CustomTabPanel value={value} index={2}>
+                    <div className='lg:grid lg:grid-cols-3 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
                                 <ProjectCard
                                     icon={gameIcon}
                                     frontText="Game Corner"
@@ -358,9 +267,8 @@ const project = () => {
                                     link="https://s.id/happy-2k24"
                                 />
                             </div>
-                        </div>
-                    </div>
-                </section>
+                    </CustomTabPanel>
+                </Box>
             </div>
         </>
     )

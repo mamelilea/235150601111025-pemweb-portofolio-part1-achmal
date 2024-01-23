@@ -16,63 +16,6 @@ const Loading = () => {
         });
     }, []);
     return (
-        // <div className='w-screen flex items-center justify-center h-screen z-50 top-0 right-0 left-0 bottom-0'>
-        //     <div className="main_wrapper">
-        //         <div className="main">
-        //             <div className="antenna">
-        //                 <div className="antenna_shadow"></div>
-        //                 <div className="a1"></div>
-        //                 <div className="a1d"></div>
-        //                 <div className="a2"></div>
-        //                 <div className="a2d"></div>
-        //                 <div className="a_base"></div>
-        //             </div>
-        //             <div className="tv">
-        //                 <div className="cruve">
-
-        //                 </div>
-        //                 <div className="display_div">
-        //                     <div className="screen_out">
-        //                         <div className="screen_out1">
-        //                             <div className="screen">
-        //                                 <span className="notfound_text"> NOT FOUND</span>
-        //                             </div>
-        //                         </div>
-        //                     </div>
-        //                 </div>
-        //                 <div className="lines">
-        //                     <div className="line1"></div>
-        //                     <div className="line2"></div>
-        //                     <div className="line3"></div>
-        //                 </div>
-        //                 <div className="buttons_div">
-        //                     <div className="b1"><div></div></div>
-        //                     <div className="b2"></div>
-        //                     <div className="speakers">
-        //                         <div className="g1">
-        //                             <div className="g11"></div>
-        //                             <div className="g12"></div>
-        //                             <div className="g13"></div>
-        //                         </div>
-        //                         <div className="g"></div>
-        //                         <div className="g"></div>
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //             <div className="bottom">
-        //                 <div className="base1"></div>
-        //                 <div className="base2"></div>
-        //                 <div className="base3"></div>
-        //             </div>
-        //         </div>
-        //         <div className="text_404">
-        //             <div className="text_4041">4</div>
-        //             <div className="text_4042">0</div>
-        //             <div className="text_4043">4</div>
-        //         </div>
-        //     </div>
-
-        // </div>
         <div className='flex justify-center items-center w-screen h-screen lg:px-0 px-10 bg-slate-950'>
             <svg id='achmal' width="484" height="116" viewBox="0 0 484 116" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M481.781 3V1.5H480.281H467.203H465.703V3V111V112.5H467.203H480.281H481.781V111V3Z" stroke="#86A7FC" stroke-width="3" />
