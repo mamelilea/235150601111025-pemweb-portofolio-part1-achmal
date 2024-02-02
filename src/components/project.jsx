@@ -166,7 +166,7 @@ const project = () => {
                                     imgContent={cv}
                                     titleDesc="My Curiculum Vitae"
                                     tech="HTML, CSS"
-                                    link="https://bit.ly/achmal-cv"
+                                    link="https://s.id/achmal-cv"
                                 />
                                 <ProjectCard
                                     icon={materiIcon}
@@ -219,7 +219,7 @@ const project = () => {
                                     imgContent={cv}
                                     titleDesc="My Curiculum Vitae"
                                     tech="HTML, CSS"
-                                    link="https://bit.ly/achmal-cv"
+                                    link="https://s.id/achmal-cv"
                                 />
                                 <ProjectCard
                                     icon={materiIcon}
