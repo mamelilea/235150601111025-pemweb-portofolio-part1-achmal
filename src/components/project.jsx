@@ -44,20 +44,20 @@ const ProjectCard = ({ icon, frontText, imgContent, titleDesc, tech, link }) => 
                     </div>
 
                     <div className="front-content absolute w-full h-full p-2 flex flex-col justify-between">
-                        <content className="project-img">
+                        <div className="project-img">
                             <img src={imgContent} alt="" />
-                        </content>
+                        </div>
                         <div className="description flex w-full">
                             <div className="w-full">
                                 <div className="title max-w-full flex justify-between text-xs">
-                                    <p className="title w-10/12">
+                                    <div className="title w-10/12">
                                         <strong>{titleDesc}</strong>
-                                    </p>
+                                    </div>
                                 </div>
-                                <p className="card-footer">tech &nbsp; : {tech}</p>
+                                <div className="card-footer">tech &nbsp; : {tech}</div>
                             </div>
                             <button className="">
-                                <a href={link} target="_blank">
+                                <a href={link} target="_blank" >
                                     <span>visit</span>
                                 </a>
                             </button>
@@ -119,154 +119,154 @@ const project = () => {
                 <h1 data-aos="fade-down" id="project" className="text-white lg:text-4xl text-2xl font-unigeo text-center lg:py-10">My Projects</h1>
                 {/* card project */}
                 <Box sx={{ width: '100%' }}>
-                    <Box sx={{ borderBottom: 1, borderColor: 'divider' }} style={{ display: 'flex', justifyContent: 'center',alignItems: 'center'}}>
+                    <Box sx={{ borderBottom: 1, borderColor: 'divider' }} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                            <Tab label="All" {...a11yProps(0)} style={{ color: 'white' }}/>
-                            <Tab label="Portfolio" {...a11yProps(1)} style={{ color: 'white' }}/>
-                            <Tab label="Other" {...a11yProps(2)} style={{ color: 'white' }}/>
+                            <Tab label="All" {...a11yProps(0)} style={{ color: 'white' }} />
+                            <Tab label="Portfolio" {...a11yProps(1)} style={{ color: 'white' }} />
+                            <Tab label="Other" {...a11yProps(2)} style={{ color: 'white' }} />
                         </Tabs>
                     </Box>
                     <CustomTabPanel value={value} index={0}>
-                    <div className='lg:grid lg:grid-cols-3 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
-                                <ProjectCard
-                                    icon={gameIcon}
-                                    frontText="Game Corner"
-                                    imgContent={gameCorner}
-                                    titleDesc="Game Corner Filkom UB"
-                                    tech="Figma, React, Tailwind, Node JS, Vercel."
-                                    link="https://s.id/game-corner"
-                                />
-                                <ProjectCard
-                                    icon={galeriIcon}
-                                    frontText="GaleriKu"
-                                    imgContent={galeriku}
-                                    titleDesc="Galeri Project"
-                                    tech="HTML, CSS"
-                                    link="https://mamelilea.github.io/galeri-achmal/galeri.html"
-                                />
-                                <ProjectCard
-                                    icon={webIcon}
-                                    frontText="Achmal Web"
-                                    imgContent={web}
-                                    titleDesc="Achmal Web Portfolio"
-                                    tech="HTML, Bootstrap, Jquery, Java Script"
-                                    link="https://bit.ly/achmal-web"
-                                />
-                                <ProjectCard
-                                    icon={portoIcon}
-                                    frontText="Achmal Porto"
-                                    imgContent={porto}
-                                    titleDesc="Achmal Portfolio"
-                                    tech="HTML, Bootstrap, Jquery, Java Script, AOS Animation"
-                                    link="https://mamelilea.github.io/achmal-porto/portofolionew.html"
-                                />
-                                <ProjectCard
-                                    icon={cvIcon}
-                                    frontText="My CV"
-                                    imgContent={cv}
-                                    titleDesc="My Curiculum Vitae"
-                                    tech="HTML, CSS"
-                                    link="https://bit.ly/achmal-cv"
-                                />
-                                <ProjectCard
-                                    icon={materiIcon}
-                                    frontText="Web Materialize"
-                                    imgContent={materi}
-                                    titleDesc="Website Materialize"
-                                    tech="HTML, Materialize"
-                                    link="https://mamelilea.github.io/porto-materialize/coba.html"
-                                />
-                                <ProjectCard
-                                    icon={dicodingIcon}
-                                    frontText="Portfolio Dicoding"
-                                    imgContent={dicoding}
+                        <div className='lg:grid lg:grid-cols-3 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
+                            <ProjectCard
+                                icon={gameIcon}
+                                frontText="Game Corner"
+                                imgContent={gameCorner}
+                                titleDesc="Game Corner Filkom UB"
+                                tech="Figma, React, Tailwind, Node JS, Vercel."
+                                link="https://s.id/game-corner"
+                            />
+                            <ProjectCard
+                                icon={galeriIcon}
+                                frontText="GaleriKu"
+                                imgContent={galeriku}
+                                titleDesc="Galeri Project"
+                                tech="HTML, CSS"
+                                link="https://mamelilea.github.io/galeri-achmal/galeri.html"
+                            />
+                            <ProjectCard
+                                icon={webIcon}
+                                frontText="Achmal Web"
+                                imgContent={web}
+                                titleDesc="Achmal Web Portfolio"
+                                tech="HTML, Bootstrap, Jquery, Java Script"
+                                link="https://bit.ly/achmal-web"
+                            />
+                            <ProjectCard
+                                icon={portoIcon}
+                                frontText="Achmal Porto"
+                                imgContent={porto}
+                                titleDesc="Achmal Portfolio"
+                                tech="HTML, Bootstrap, Jquery, Java Script, AOS Animation"
+                                link="https://mamelilea.github.io/achmal-porto/portofolionew.html"
+                            />
+                            <ProjectCard
+                                icon={cvIcon}
+                                frontText="My CV"
+                                imgContent={cv}
+                                titleDesc="My Curiculum Vitae"
+                                tech="HTML, CSS"
+                                link="https://bit.ly/achmal-cv"
+                            />
+                            <ProjectCard
+                                icon={materiIcon}
+                                frontText="Web Materialize"
+                                imgContent={materi}
+                                titleDesc="Website Materialize"
+                                tech="HTML, Materialize"
+                                link="https://mamelilea.github.io/porto-materialize/coba.html"
+                            />
+                            <ProjectCard
+                                icon={dicodingIcon}
+                                frontText="Portfolio Dicoding"
+                                imgContent={dicoding}
 
-                                    titleDesc="Website Portfolio Dicoding"
-                                    tech="HTML, CSS, Java Script"
-                                    link="https://mamelilea.github.io/website-dicoding/"
-                                />
-                                <ProjectCard
-                                    icon={newYearIcon}
-                                    frontText="New Year"
-                                    imgContent={newYear}
-                                    titleDesc="Website Countdown 2024"
-                                    tech="React, Tailwind"
-                                    link="https://s.id/happy-2k24"
-                                />
-                            </div>
+                                titleDesc="Website Portfolio Dicoding"
+                                tech="HTML, CSS, Java Script"
+                                link="https://mamelilea.github.io/website-dicoding/"
+                            />
+                            <ProjectCard
+                                icon={newYearIcon}
+                                frontText="New Year"
+                                imgContent={newYear}
+                                titleDesc="Website Countdown 2024"
+                                tech="React, Tailwind"
+                                link="https://s.id/happy-2k24"
+                            />
+                        </div>
                     </CustomTabPanel>
                     <CustomTabPanel value={value} index={1}>
-                    <div className='lg:grid lg:grid-cols-3 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
-                                <ProjectCard
-                                    icon={webIcon}
-                                    frontText="Achmal Web"
-                                    imgContent={web}
-                                    titleDesc="Achmal Web Portfolio"
-                                    tech="HTML, Bootstrap, Jquery, Java Script"
-                                    link="https://bit.ly/achmal-web"
-                                />
-                                <ProjectCard
-                                    icon={portoIcon}
-                                    frontText="Achmal Porto"
-                                    imgContent={porto}
-                                    titleDesc="Achmal Portfolio"
-                                    tech="HTML, Bootstrap, Jquery, Java Script, AOS Animation"
-                                    link="https://mamelilea.github.io/achmal-porto/portofolionew.html"
-                                />
-                                <ProjectCard
-                                    icon={cvIcon}
-                                    frontText="My CV"
-                                    imgContent={cv}
-                                    titleDesc="My Curiculum Vitae"
-                                    tech="HTML, CSS"
-                                    link="https://bit.ly/achmal-cv"
-                                />
-                                <ProjectCard
-                                    icon={materiIcon}
-                                    frontText="Web Materialize"
-                                    imgContent={materi}
-                                    titleDesc="Website Materialize"
-                                    tech="HTML, Materialize"
-                                    link="https://mamelilea.github.io/porto-materialize/coba.html"
-                                />
-                                <ProjectCard
-                                    icon={dicodingIcon}
-                                    frontText="Portfolio Dicoding"
-                                    imgContent={dicoding}
+                        <div className='lg:grid lg:grid-cols-3 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
+                            <ProjectCard
+                                icon={webIcon}
+                                frontText="Achmal Web"
+                                imgContent={web}
+                                titleDesc="Achmal Web Portfolio"
+                                tech="HTML, Bootstrap, Jquery, Java Script"
+                                link="https://bit.ly/achmal-web"
+                            />
+                            <ProjectCard
+                                icon={portoIcon}
+                                frontText="Achmal Porto"
+                                imgContent={porto}
+                                titleDesc="Achmal Portfolio"
+                                tech="HTML, Bootstrap, Jquery, Java Script, AOS Animation"
+                                link="https://mamelilea.github.io/achmal-porto/portofolionew.html"
+                            />
+                            <ProjectCard
+                                icon={cvIcon}
+                                frontText="My CV"
+                                imgContent={cv}
+                                titleDesc="My Curiculum Vitae"
+                                tech="HTML, CSS"
+                                link="https://bit.ly/achmal-cv"
+                            />
+                            <ProjectCard
+                                icon={materiIcon}
+                                frontText="Web Materialize"
+                                imgContent={materi}
+                                titleDesc="Website Materialize"
+                                tech="HTML, Materialize"
+                                link="https://mamelilea.github.io/porto-materialize/coba.html"
+                            />
+                            <ProjectCard
+                                icon={dicodingIcon}
+                                frontText="Portfolio Dicoding"
+                                imgContent={dicoding}
 
-                                    titleDesc="Website Portfolio Dicoding"
-                                    tech="HTML, CSS, Java Script"
-                                    link="https://mamelilea.github.io/website-dicoding/"
-                                />
-                            </div>
+                                titleDesc="Website Portfolio Dicoding"
+                                tech="HTML, CSS, Java Script"
+                                link="https://mamelilea.github.io/website-dicoding/"
+                            />
+                        </div>
                     </CustomTabPanel>
                     <CustomTabPanel value={value} index={2}>
-                    <div className='lg:grid lg:grid-cols-3 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
-                                <ProjectCard
-                                    icon={gameIcon}
-                                    frontText="Game Corner"
-                                    imgContent={gameCorner}
-                                    titleDesc="Game Corner Filkom UB"
-                                    tech="Figma, React, Tailwind, Node JS, Vercel."
-                                    link="https://s.id/game-corner"
-                                />
-                                <ProjectCard
-                                    icon={galeriIcon}
-                                    frontText="GaleriKu"
-                                    imgContent={galeriku}
-                                    titleDesc="Galeri Project"
-                                    tech="HTML, CSS"
-                                    link="https://mamelilea.github.io/galeri-achmal/galeri.html"
-                                />
-                                <ProjectCard
-                                    icon={newYearIcon}
-                                    frontText="New Year"
-                                    imgContent={newYear}
-                                    titleDesc="Website Countdown 2024"
-                                    tech="React, Tailwind"
-                                    link="https://s.id/happy-2k24"
-                                />
-                            </div>
+                        <div className='lg:grid lg:grid-cols-3 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
+                            <ProjectCard
+                                icon={gameIcon}
+                                frontText="Game Corner"
+                                imgContent={gameCorner}
+                                titleDesc="Game Corner Filkom UB"
+                                tech="Figma, React, Tailwind, Node JS, Vercel."
+                                link="https://s.id/game-corner"
+                            />
+                            <ProjectCard
+                                icon={galeriIcon}
+                                frontText="GaleriKu"
+                                imgContent={galeriku}
+                                titleDesc="Galeri Project"
+                                tech="HTML, CSS"
+                                link="https://mamelilea.github.io/galeri-achmal/galeri.html"
+                            />
+                            <ProjectCard
+                                icon={newYearIcon}
+                                frontText="New Year"
+                                imgContent={newYear}
+                                titleDesc="Website Countdown 2024"
+                                tech="React, Tailwind"
+                                link="https://s.id/happy-2k24"
+                            />
+                        </div>
                     </CustomTabPanel>
                 </Box>
             </div>

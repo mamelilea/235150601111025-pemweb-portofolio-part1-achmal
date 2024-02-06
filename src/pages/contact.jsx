@@ -10,6 +10,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
+import { Link } from 'react-router-dom';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -97,8 +98,10 @@ const contact = () => {
                         </Tooltip>
                         {/* quotes */}
                         <React.Fragment>
-                            <Button data-aos="zoom-in" style={{border:'solid', borderColor:'white', borderWidth
-                        :'1px', color:'white'}} variant="outlined" onClick={handleClickOpen}>
+                            <Button data-aos="zoom-in" style={{
+                                border: 'solid', borderColor: 'white', borderWidth
+                                    : '1px', color: 'white'
+                            }} variant="outlined" onClick={handleClickOpen}>
                                 click this
                             </Button>
                             <Dialog
@@ -111,7 +114,7 @@ const contact = () => {
                                 <DialogTitle>{"read this my friend..."}</DialogTitle>
                                 <DialogContent>
                                     <DialogContentText id="alert-dialog-slide-description">
-                                        <h1 className='bg-white bg-opacity-30 w-[80%] h-[60%] rounded-3xl flex justify-center items-center font-quote lg:text-4xl text-2xl'>busy ourselves with improving yourself, enjoy and appreciate our life journey. Be the best version of yourself, see u on top, cheer up✌️😉🙌</h1>
+                                        <div className='bg-white bg-opacity-30 w-[80%] h-[60%] rounded-3xl flex justify-center items-center font-quote lg:text-4xl text-2xl'>busy ourselves with improving yourself, enjoy and appreciate our life journey. Be the best version of yourself, see u on top, cheer up✌️😉🙌</div>
                                     </DialogContentText>
                                 </DialogContent>
                                 <DialogActions>
@@ -138,15 +141,17 @@ const contact = () => {
                         <span className="form-load-btn hidden text-center">
                             <div
                                 role="status"
-                                class="inline-block h-4 w-4 mr-2 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                                className="inline-block h-4 w-4 mr-2 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
                             >
-                                <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                                <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
                                 </span>
                             </div>
                             Loading
                         </span>
                     </form>
+                    <h3 className='text-center'>or click <Link className='text-[#86A7FC]' to="/chat" rel="noopener noreferrer">this</Link> to send a anonymus message</h3>
                 </div>
+
             </div>
         </div>
     )

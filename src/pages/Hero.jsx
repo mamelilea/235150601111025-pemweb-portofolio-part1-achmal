@@ -100,10 +100,10 @@ const Hero = () => {
                                     </div>
                                     <div className="flex lg:hidden gap-2">
                                         <div className=" lg:hidden lg:flex-1 lg:justify-end">
-                                            <label class="ui-switch" >
+                                            <label className="ui-switch" >
                                                 <input type="checkbox" name="" id="" />
-                                                <div class="slider">
-                                                    <div class="circleButton" onClick={handleThemeSwitch}></div>
+                                                <div className="slider">
+                                                    <div className="circleButton" onClick={handleThemeSwitch}></div>
                                                 </div>
                                             </label>
                                         </div>
@@ -132,10 +132,10 @@ const Hero = () => {
                                         ))}
                                     </div>
                                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                                        <label class="ui-switch" >
+                                        <label className="ui-switch" >
                                             <input type="checkbox" name="" id="" />
-                                            <div class="slider">
-                                                <div class="circleButton" onClick={handleThemeSwitch}></div>
+                                            <div className="slider">
+                                                <div className="circleButton" onClick={handleThemeSwitch}></div>
                                             </div>
                                         </label>
                                     </div>
