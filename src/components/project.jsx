@@ -180,7 +180,6 @@ const project = () => {
                                 icon={dicodingIcon}
                                 frontText="Portfolio Dicoding"
                                 imgContent={dicoding}
-
                                 titleDesc="Website Portfolio Dicoding"
                                 tech="HTML, CSS, Java Script"
                                 link="https://mamelilea.github.io/website-dicoding/"
@@ -195,6 +194,7 @@ const project = () => {
                             />
                         </div>
                     </CustomTabPanel>
+
                     <CustomTabPanel value={value} index={1}>
                         <div className='lg:grid lg:grid-cols-3 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
                             <ProjectCard
@@ -233,7 +233,6 @@ const project = () => {
                                 icon={dicodingIcon}
                                 frontText="Portfolio Dicoding"
                                 imgContent={dicoding}
-
                                 titleDesc="Website Portfolio Dicoding"
                                 tech="HTML, CSS, Java Script"
                                 link="https://mamelilea.github.io/website-dicoding/"
