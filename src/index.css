@@ -495,6 +495,17 @@
   --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .ui-switch {
+    --switch-width: 56px;
+    --switch-height: 28px;
+  }
+  .slider .circleButton {
+    --circle-diameter: 36px;
+    margin-top: -2px;
+  }
+}
+
 .ui-switch input {
   display: none;
 }
@@ -932,6 +943,11 @@
 }
 
 /* contact page */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .sosmed-contact Button {
+    height: 4rem;
+  }
+}
 
 .mail-parent:hover .mail-child {
   fill: #fa5252;
@@ -964,6 +980,12 @@
   border-radius: 16px;
   background-size: 200% 100%;
   animation: gradient 5s ease infinite;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .form-container {
+    font-size: 20px;
+  }
 }
 
 @keyframes gradient {
@@ -1024,6 +1046,12 @@
   border: 1px solid #414141;
   background-color: transparent;
   font-family: inherit;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .form-container .form-group textarea {
+    height: 170px;
+  }
 }
 
 .form-container .form-group input::placeholder {
@@ -1103,12 +1131,26 @@
 }
 
 /* anonim chat */
+/* media query */
+
 .card {
   width: 480px;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 1024px) {
+  .card {
+    width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 90vw;
+  }
 }
 
 .chat-header {
@@ -1120,9 +1162,27 @@
   border-top-right-radius: 5px;
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .chat-header {
+    font-size: 20px;
+  }
+}
+
 .chat-window {
   height: 400px;
   overflow-y: scroll;
+}
+
+@media only screen and (max-width: 1024px) {
+  .chat-window {
+    height: 60vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .chat-window {
+    height: 400px;
+  }
 }
 
 .chat-input {
@@ -1151,7 +1211,8 @@
 }
 
 .send-button:hover {
-  background-color: rgb(255, 255, 255);
+  outline: 1px solid #333;
+  background-color: #e3efef;
   color: rgb(0, 0, 0);
   box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }

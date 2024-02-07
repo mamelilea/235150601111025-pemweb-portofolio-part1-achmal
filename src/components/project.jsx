@@ -26,7 +26,7 @@ import Box from '@mui/material/Box';
 
 const ProjectCard = ({ icon, frontText, imgContent, titleDesc, tech, link }) => {
     return (
-        <div data-aos="fade-up-left" className="card overflow-visible lg:w-96 w-72 h-56 lg:h-72">
+        <div data-aos="fade-up-left" className="card overflow-visible lg:w-96 md:w-80 w-72 h-56 lg:h-72">
             <div className="content w-full h-full rounded">
                 <div className="back bg-gray-900 absolute w-full h-full rounded overflow-hidden justify-center flex items-center">
                     <div className="back-content absolute bg-gray-900 rounded text-white flex flex-col justify-center items-center w-[99%] h-[99%] gap-8">
@@ -116,7 +116,7 @@ const project = () => {
     return (
         <>
             <div className='project w-screen bg-slate-950 dark:bg-black px-12 py-10 z-[5] relative'>
-                <h1 data-aos="fade-down" id="project" className="text-white lg:text-4xl text-2xl font-unigeo text-center lg:py-10">My Projects</h1>
+                <h1 data-aos="fade-down" id="project" className="text-white lg:text-4xl md:text-[3.8rem] text-2xl font-unigeo text-center md:pb-10 lg:pb-1 lg:py-10">My Projects</h1>
                 {/* card project */}
                 <Box sx={{ width: '100%' }}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -127,7 +127,7 @@ const project = () => {
                         </Tabs>
                     </Box>
                     <CustomTabPanel value={value} index={0}>
-                        <div className='lg:grid lg:grid-cols-3 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
+                        <div className='lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
                             <ProjectCard
                                 icon={gameIcon}
                                 frontText="Game Corner"
@@ -196,7 +196,7 @@ const project = () => {
                     </CustomTabPanel>
 
                     <CustomTabPanel value={value} index={1}>
-                        <div className='lg:grid lg:grid-cols-3 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
+                        <div className='lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
                             <ProjectCard
                                 icon={webIcon}
                                 frontText="Achmal Web"
@@ -240,7 +240,7 @@ const project = () => {
                         </div>
                     </CustomTabPanel>
                     <CustomTabPanel value={value} index={2}>
-                        <div className='lg:grid lg:grid-cols-3 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
+                        <div className='lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 flex flex-col items-center lg:gap-0 lg:gap-y-10 gap-5 py-10'>
                             <ProjectCard
                                 icon={gameIcon}
                                 frontText="Game Corner"
