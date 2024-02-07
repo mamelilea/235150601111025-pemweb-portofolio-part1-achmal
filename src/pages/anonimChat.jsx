@@ -15,8 +15,6 @@ function anonimChat() {
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
     const [editMessage, setEditMessage] = useState(null);
-    const [avatarUrl, setAvatarUrl] = useState('');
-    const [avatarInitials, setAvatarInitials] = useState('');
     const [db, setDb] = useState(null);
 
     const messageInputRef = useRef(null);
@@ -110,7 +108,7 @@ function anonimChat() {
                             {messages.slice().reverse().map((message) => (
                                 <ul key={message.key} className="list-none p-3 flex gap-3">
                                     <div>
-                                        <Avatar alt="" src={avatarUrl}>
+                                        <Avatar alt="A">
                                             {message.avatarInitials}
                                         </Avatar>
                                     </div>
