@@ -6,4 +6,4 @@ Framework : React JS
 Database : Firebase
 Styling : tailwind, materialUI
 Animasi : Framer, Anime JS, AOS
-Deploy : Vite
+Deploy : Vercel
