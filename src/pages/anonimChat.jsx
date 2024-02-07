@@ -45,22 +45,23 @@ function anonimChat() {
                 const fetchedMessages = querySnapshot.docs.map(doc => ({
                     key: doc.id,
                     messageText: doc.data().message,
-                    avatarInitials: generateRandomInitials()
+                    avatarInitials: generateRandomInitials(),
+                    timestamp: doc.data().timestamp
                 }));
+                const sortedMessages = fetchedMessages.sort((a, b) => b.timestamp - a.timestamp);
                 setMessages(fetchedMessages);
             } catch (error) {
                 console.error("Error getting data:", error);
             }
         };
-
         fetchData();
     }, []);
     const handleMessageSend = async () => {
         if (!newMessage) return;
         try {
-
+            const timestamp = new Date().getTime();
             if (editMessage) { // Jika ada pesan yang sedang diedit
-                await updateDoc(doc(db, 'message', editMessage.key), { message: newMessage });
+                await updateDoc(doc(db, 'message', editMessage.key), { message: newMessage, timestamp });
                 setEditMessage(null);
 
                 // Perbarui state pesan dengan pesan yang telah diedit
@@ -74,7 +75,7 @@ function anonimChat() {
                     return updatedMessages;
                 });
             } else {
-                const docRef = await addDoc(collection(db, 'message'), { message: newMessage });
+                const docRef = await addDoc(collection(db, 'message'), { message: newMessage, timestamp });
                 const newMessageObj = { key: docRef.id, messageText: newMessage, avatarInitials: generateRandomInitials() };
                 setMessages(prevMessages => [newMessageObj, ...prevMessages]);
             }
