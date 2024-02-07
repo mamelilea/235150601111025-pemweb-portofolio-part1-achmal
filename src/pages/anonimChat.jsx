@@ -66,7 +66,7 @@ function anonimChat() {
 
         setTimeout(() => {
             setAnimationComplete(true);
-        }, 7500);
+        }, 7000);
 
     }, []);
 
