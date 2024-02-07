@@ -19,6 +19,7 @@ function anonimChat() {
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
     const [editMessage, setEditMessage] = useState(null);
+    const [animationComplete, setAnimationComplete] = useState(false);
     const [db, setDb] = useState(null);
 
     const messageInputRef = useRef(null);
@@ -62,7 +63,18 @@ function anonimChat() {
         const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
         tl.to(".slider-load", { y: "-100%", duration: 1.5, delay: 5 });
         tl.to(".intro-load", { y: "-100%", duration: 1 }, "-=1.5");
+
+        setTimeout(() => {
+            setAnimationComplete(true);
+        }, 7500);
+
     }, []);
+
+    useEffect(() => {
+        if (animationComplete && messageInputRef.current) {
+            messageInputRef.current.focus();
+        }
+    }, [animationComplete]);
     const handleMessageSend = async () => {
         if (!newMessage) return;
         try {
@@ -137,20 +149,22 @@ function anonimChat() {
                                 ))}
                             </div>
                             <div className="chat-input">
-                                <input
-                                    ref={messageInputRef}
-                                    type="text"
-                                    id="message-input"
-                                    className="message-input"
-                                    placeholder="Type your message here"
-                                    value={newMessage}
-                                    onChange={(e) => setNewMessage(e.target.value)}
-                                    onKeyDown={(e) => {
-                                        if (e.key === 'Enter') {
-                                            handleMessageSend();
-                                        }
-                                    }}
-                                />
+                                {animationComplete && (
+                                    <input
+                                        ref={messageInputRef}
+                                        type="text"
+                                        id="message-input"
+                                        className="message-input"
+                                        placeholder="Type your message here"
+                                        value={newMessage}
+                                        onChange={(e) => setNewMessage(e.target.value)}
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter') {
+                                                handleMessageSend();
+                                            }
+                                        }}
+                                    />
+                                )}
                                 <button className="send-button" onClick={handleMessageSend}>Send</button>
                             </div>
                         </div>
