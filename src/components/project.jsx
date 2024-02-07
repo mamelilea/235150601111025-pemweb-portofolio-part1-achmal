@@ -50,18 +50,17 @@ const ProjectCard = ({ icon, frontText, imgContent, titleDesc, tech, link }) => 
                         <div className="description flex w-full">
                             <div className="w-full">
                                 <div className="title max-w-full flex justify-between text-xs">
-                                    <div className="title w-10/12">
-                                        <strong>{titleDesc}</strong>
-                                    </div>
+                                    <strong>{titleDesc}</strong>
                                 </div>
                                 <div className="card-footer">tech &nbsp; : {tech}</div>
                             </div>
                             <button className="">
-                                <a href={link} target="_blank" >
+                                <a href={link} target="_blank">
                                     <span>visit</span>
                                 </a>
                             </button>
                         </div>
+
                     </div>
                 </div>
             </div>

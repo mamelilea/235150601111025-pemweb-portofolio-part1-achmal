@@ -150,7 +150,7 @@ const contact = () => {
                             Loading
                         </span>
                     </form>
-                    <h3 className='text-center'>or click <Link className='text-[#86A7FC]' to="/chat" rel="noopener noreferrer">this</Link> to send a anonymus message</h3>
+                    <h3 className='text-center'>or click <Link className='text-[#86A7FC]' to="/chat" rel="noopener noreferrer">this</Link> to send an anonymus message</h3>
                 </div>
 
             </div>
