@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, addDoc, deleteDoc, doc, updateDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, deleteDoc, doc, updateDoc, onSnapshot } from 'firebase/firestore';
 import Avatar from '@mui/material/Avatar';
 import { Link } from 'react-router-dom';
 import baby from '../assets/chat/baby.png';
@@ -8,12 +8,6 @@ import love from '../assets/chat/loveMan.png';
 import { Typewriter } from "react-simple-typewriter"
 import gsap from "gsap";
 
-
-function generateRandomInitials() {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const randomInitial = characters.charAt(Math.floor(Math.random() * characters.length));
-    return randomInitial;
-}
 
 function anonimChat() {
     const [messages, setMessages] = useState([]);
@@ -23,6 +17,22 @@ function anonimChat() {
     const [db, setDb] = useState(null);
 
     const messageInputRef = useRef(null);
+
+    const updateMessages = (firestoreDb) => {
+        const unsubscribe = onSnapshot(collection(firestoreDb, 'message'), (snapshot) => {
+            const fetchedMessages = snapshot.docs.map(doc => ({
+                key: doc.id,
+                messageText: doc.data().message,
+                avatarInitials: doc.data().avatarInitials,
+                timestamp: doc.data().timestamp
+            }));
+            const sortedMessages = fetchedMessages.sort((a, b) => b.timestamp - a.timestamp);
+            setMessages(sortedMessages);
+        });
+
+        return unsubscribe;
+    };
+
 
     useEffect(() => {
         if (messageInputRef.current) {
@@ -42,22 +52,7 @@ function anonimChat() {
         const firestoreDb = getFirestore(app);
         setDb(firestoreDb);
 
-        const fetchData = async () => {
-            try {
-                const querySnapshot = await getDocs(collection(firestoreDb, 'message'));
-                const fetchedMessages = querySnapshot.docs.map(doc => ({
-                    key: doc.id,
-                    messageText: doc.data().message,
-                    avatarInitials: generateRandomInitials(),
-                    timestamp: doc.data().timestamp
-                }));
-                const sortedMessages = fetchedMessages.sort((a, b) => b.timestamp - a.timestamp);
-                setMessages(fetchedMessages);
-            } catch (error) {
-                console.error("Error getting data:", error);
-            }
-        };
-        fetchData();
+        const unsubscribe = updateMessages(firestoreDb);
 
         // gsap
         const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
@@ -68,7 +63,10 @@ function anonimChat() {
             setAnimationComplete(true);
         }, 7000);
 
+        return () => unsubscribe();
     }, []);
+
+
 
     useEffect(() => {
         if (animationComplete && messageInputRef.current) {
@@ -95,7 +93,7 @@ function anonimChat() {
                 });
             } else {
                 const docRef = await addDoc(collection(db, 'message'), { message: newMessage, timestamp });
-                const newMessageObj = { key: docRef.id, messageText: newMessage, avatarInitials: generateRandomInitials() };
+                const newMessageObj = { key: docRef.id, messageText: newMessage };
                 setMessages(prevMessages => [newMessageObj, ...prevMessages]);
             }
             setNewMessage('');
