@@ -61,6 +61,13 @@ function anonimChat() {
 
         setTimeout(() => {
             setAnimationComplete(true);
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            // Set fokus pada input teks setelah animasi selesai
+            if (messageInputRef.current) {
+                messageInputRef.current.focus();
+            }
+        }
         }, 7000);
 
         return () => unsubscribe();
