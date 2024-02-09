@@ -38,7 +38,7 @@ function anonimChat() {
         if (messageInputRef.current) {
             messageInputRef.current.focus();
         }
-        // Your Firebase configuration
+        // Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyDcdM2wXkgw7fIkuJ1smwWJb3wCiqoUEOo",
             authDomain: "crud-pesan.firebaseapp.com",
@@ -115,10 +115,8 @@ function anonimChat() {
         setNewMessage(`${messageToEdit.messageText}`);
     };
     const handleDelete = async (key) => {
-        // Implement delete functionality using the key (doc.id)
         try {
             setMessages(prevMessages => prevMessages.filter(message => message.key !== key));
-            // Hapus dokumen dengan menggunakan key (doc.id)
             await deleteDoc(doc(db, 'message', key));
         } catch (error) {
             console.error("Error deleting document:", error);
