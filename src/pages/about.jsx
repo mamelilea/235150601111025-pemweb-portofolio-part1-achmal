@@ -7,7 +7,7 @@ const about = () => {
         <div id="about" className='bg-[#F5F5F5] dark:bg-slate-950 w-screen h-max sm:h-[80vh] py-10 z-20 relative'>
             <div className='flex flex-col justify-center items-center  w-screen h-[80%]'>
                 <div data-aos="fade-right" className='w-[90%] sm:w-[80%] flex sm:flex-row flex-col items-center justify-center'>
-                    <div className='w-[100%] sm:w-[40%] flex justify-start'>
+                    <div className='w-[100%] sm:w-[40%] flex justify-center sm:justify-start'>
                         <img src={fotoku} alt="foto Achmal" className='w-[80%]' />
                     </div>
                     <div className='w-[95%] sm:w-[60%] flex flex-col justify-start'>
