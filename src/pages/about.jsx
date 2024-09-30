@@ -1,4 +1,5 @@
 import React from 'react'
+import fotoku from '../assets/hai.png'
 
 const about = () => {
 
@@ -7,7 +8,7 @@ const about = () => {
             <div className='flex flex-col justify-center items-center  w-screen h-[80%]'>
                 <div data-aos="fade-right" className='w-[80%] flex items-center justify-center'>
                     <div className='w-[40%] flex justify-center'>
-                        <img src="/src/assets/hai.png" alt="foto Achmal" className='w-[80%]' />
+                        <img src={fotoku} alt="foto Achmal" className='w-[80%]' />
                     </div>
                     <div className='w-[60%] flex flex-col justify-start'>
                         <h1 data-aos="fade-down" className="text-[#0c0c0c] dark:text-white lg:text-4xl md:text-[3.8rem] text-2xl font-unigeo text-center m-5">About Me</h1>
