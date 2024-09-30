@@ -85,8 +85,8 @@ const Hero = () => {
                 loading ?
                     <LoadingPage /> :
                     <div>
-                        <div id='hero' className={`bg-slate-950 dark:bg-black h-screen relative z-30`}>
-                            <header className={`${scrollNav ? 'bg-slate-900 dark:bg-slate-950' : 'bg-slate-950, dark:bg-black'} fixed inset-x-0 top-0 z-50`}>
+                        <div id='hero' className={`bg-[#F5F5F5] dark:bg-slate-950 h-screen relative z-30`}>
+                            <header className={`${scrollNav ? 'bg-[#dfdfdf] dark:bg-slate-950' : 'bg-[#F5F5F5], dark:bg-slate-950'} fixed inset-x-0 top-0 z-50`}>
                                 <nav className="flex items-center justify-between p-6 md:px-10 lg:px-8" aria-label="Global">
                                     <div className="flex lg:flex-1" >
                                         <Link to="hero"
@@ -94,8 +94,8 @@ const Hero = () => {
                                             smooth={true}
                                             offset={-40}
                                             duration={500} className="-m-1.5 p-1.5">
-                                            <span className="sr-only">Your Company</span>
-                                            <span className='cursor-pointer font-origin md:text-[2.5rem] lg:text-[2.5rem] text-2xl text-cyan-100'>ACHMAL</span>
+                                            <span className="sr-only">Your Logo</span>
+                                            <span className='cursor-pointer font-origin md:text-[2.5rem] lg:text-[2.5rem] text-2xl text-cyan-500'>ACHMAL</span>
                                         </Link>
                                     </div>
                                     <div className="flex lg:hidden gap-2">
@@ -126,7 +126,7 @@ const Hero = () => {
                                                 offset={-100}
                                                 duration={500}
                                                 key={item.name}
-                                                className="cursor-pointer text-sm font-semibold leading-6 text-slate-300">
+                                                className="cursor-pointer text-sm font-semibold leading-6 text-[#0c0c0c] dark:text-[#F5F5F5]">
                                                 {item.name}
                                             </Link>
                                         ))}
@@ -151,7 +151,7 @@ const Hero = () => {
                                                 duration={500}
                                                 onClick={() => handleNavItemClick(item)}
                                                 className="-m-1.5 p-1.5">
-                                                <span className="sr-only">Your Company</span>
+                                                <span className="sr-only">Your Logo</span>
                                                 <span className='font-origin lg:text-[2.5rem] text-2xl text-cyan-900'>ACHMAL</span>
                                             </Link>
                                             <button
@@ -186,7 +186,7 @@ const Hero = () => {
                                         </div>
                                     </Dialog.Panel>
                                 </Dialog>
-                                <span style={{ transform: `translateX(${completion - 100}%)` }} className='absolute bg-slate-50 w-full h-1 bottom-0'>
+                                <span style={{ transform: `translateX(${completion - 100}%)` }} className='absolute bg-[#0c0c0c] dark:bg-zinc-300 w-full h-1 bottom-0'>
 
                                 </span>
                             </header>
@@ -195,15 +195,15 @@ const Hero = () => {
                                 <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-32">
 
                                     <div className="text-center flex flex-col items-center md:my-28 lg:my-0">
-                                        <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-6xl md:text-[5.5rem] lg:text-[5rem] lg:ml-6">
+                                        <h1 className="text-4xl font-bold tracking-tight text-[#0c0c0c] dark:text-[#F5F5F5] sm:text-6xl md:text-[5.5rem] lg:text-[5rem] lg:ml-6">
                                             Halo
                                         </h1>
                                         <div className='relative flex justify-center md:-ml-[8rem] lg:-ml-1 md:w-96 lg:w-96 w-56'>
-                                            <h1 className="relative lg:w-36 md:w-44 w-20  text-4xl sm:text-6xl lg:text-[4rem] md:text-[4.5rem] font-bold tracking-tight text-slate-200 ">
+                                            <h1 className="relative lg:w-36 md:w-44 w-20  text-4xl sm:text-6xl lg:text-[4rem] md:text-[4.5rem] font-bold tracking-tight text-[#0c0c0c] dark:text-[#F5F5F5]">
                                                 I'am <span className='mr-4'></span>
                                             </h1>
                                             <div className='lg:w-48 w-32'>
-                                                <h1 className="lg:w-10 w-1 text-4xl font-bold tracking-tight text-cyan-200 sm:text-6xl md:text-[4.5rem] lg:text-[4rem]" >
+                                                <h1 className="lg:w-10 w-1 text-4xl font-bold tracking-tight text-cyan-600 sm:text-6xl md:text-[4.5rem] lg:text-[4rem]" >
                                                     <Typewriter words={['Achmal']} typeSpeed={150} loop deleteSpeed={150} delaySpeed={1000} cursor
                                                         cursorStyle='|' />
                                                 </h1>
@@ -220,7 +220,7 @@ const Hero = () => {
                                             >
                                                 MY CV
                                             </a>
-                                            <a href="https://www.instagram.com/achmalp" target='_blank' className="ui-btn lg:text-base md:text-lg">
+                                            <a href="https://www.instagram.com/achmalp" target='_blank' className="ui-btn lg:text-base md:text-lg dark:text-[#F5F5F5]">
                                                 <span>
                                                     Visit more <span aria-hidden="true">→</span>
                                                 </span>
