@@ -191,7 +191,7 @@ const Hero = () => {
                                 </span>
                             </header>
 
-                            <div className="relative isolate px-6 lg:pt-14 pt-20     lg:px-8">
+                            <div className="relative isolate px-6 pt-40 lg:pt-20 lg:px-8">
                                 <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-32">
 
                                     <div className="text-center flex flex-col items-center md:my-28 lg:my-0">
