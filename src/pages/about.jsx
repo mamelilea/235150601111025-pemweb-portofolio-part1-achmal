@@ -4,7 +4,7 @@ import fotoku from '../assets/hai.png'
 const about = () => {
 
     return (
-        <div id="about" className='bg-[#F5F5F5] dark:bg-slate-950 w-screen h-[90vh] sm:h-[80vh] py-10 z-20 relative'>
+        <div id="about" className='bg-[#F5F5F5] dark:bg-slate-950 w-screen h-max sm:h-[80vh] py-10 z-20 relative'>
             <div className='flex flex-col justify-center items-center  w-screen h-[80%]'>
                 <div data-aos="fade-right" className='w-[90%] sm:w-[80%] flex sm:flex-row flex-col items-center justify-center'>
                     <div className='w-[100%] sm:w-[40%] flex justify-start'>
